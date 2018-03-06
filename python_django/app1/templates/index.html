@@ -1,0 +1,513 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="" />
+    <meta name="description" content="" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" /> -->
+    <title>Python探索馆 - Slice</title>
+    <!-- Main Theme -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+
+    <!-- Font -->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_n5vylbuqe61or.css" />
+  </head>
+<body>
+
+
+<!--===== Full Screen BG =====-->
+<div class="full-pic"></div>
+
+
+
+<!--===== Begin Header =====-->
+<header class="header">
+  <div class="fixed-head" style="position: fixed; width: 100%; background-color: #65b2f1; -webkit-transform: translateZ(0);">
+    <div class="wrap1000 head-wrap">
+
+      <div class="logo">
+        <a href="javascript: void(0);">
+          Python学院图书馆
+        </a>
+      </div>
+
+      <!-- nav -->
+      <div class="nav">
+        <ul class="nav-list">
+          <li>
+            <a href="javascript: void(0);"><span>首页</span></a>
+          </li>
+          <li>
+            <a href="javascript: void(0);"><span>玄幻</span></a>
+          </li>
+          <li>
+            <a href="javascript: void(0);"><span>修仙</span></a>
+          </li>
+          <li>
+            <a href="javascript: void(0);"><span>都市</span></a>
+          </li>
+          <li>
+            <a href="javascript: void(0);"><span>文学</span></a>
+          </li>
+        </ul>
+      </div><!-- ./nav -->
+
+      <div class="search">
+        <form action="#" method="get">
+          <input placeholder="搜索书名" class="search-inp" type="text" maxlength="10" />
+          <a href="javascript: void(0);">
+            <!-- <input class="iconfont icon-search" type="submit" value="" /> -->
+            <i class="iconfont icon-search"></i>
+          </a>
+        </form>
+      </div>
+
+    </div><!-- /.wrap1000 -->
+  </div>
+</header>
+<!--===== header End =====-->
+
+
+
+<!--===== Begin Main =====-->
+<section class="main">
+  <div class="main-wrap wrap1000">
+    <div class="hot-section">
+
+      <div class="hot-shadow">
+        <div class="hot-title">最热</div>
+      </div>
+
+      <div class="figure"></div>
+
+      <div class="hot-content">
+
+        <!-- banner -->
+        <div class="banner">
+          <ul class="banner-imgs">
+            <li>
+              <a href="javascript: void(0);">
+                  <img src="{% static 'img/1.jpg'%}" alt="" width="750" height="300" />
+              </a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"><img src="{% static 'img/2.jpg'%}" alt="" width="750" height="300" /></a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"><img src="{% static 'img/3.jpg'%}" alt="" width="750" height="300" /></a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"><img src="{% static 'img/4.jpg'%}" alt="" width="750" height="300" /></a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"><img src="{% static 'img/5.png'%}" alt="" width="750" height="300" /></a>
+            </li>
+          </ul><!-- /.imgs -->
+
+          <div class="control-page">
+            <a class="iconfont icon-bannerzuo" href="javascript: void(0);"></a>
+            <a class="iconfont icon-banneryou" href="javascript: void(0);"></a>
+          </div>
+
+          <ul class="banner-btn">
+            <li class="banner-btn-on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+
+        </div><!-- /.banner -->
+
+
+
+
+        <div class="hot-recommend">
+          <ul class="hot-list">
+{#            {% for novel in novels %}#}
+            <li>
+              <a href="javascript: void(0);">
+                <div>
+{#                  <img src="{{ novel.novelimg }}" alt="" width="" /><span></span>#}
+                    <img src="img/book-1.jpg" alt="" width="" /><span></span>
+                </div>
+                <p>
+{#                  <b>{{ novel.novelname }}</b>#}
+                    <b>圣墟</b>
+{#                  <span class="author">{{ novel.author }} 著</span>#}
+                    <span class="author">辰东  著</span>
+                  <span class="book-description">
+{#                    {{ novel.description|safe }}#}
+                      新潮澎湃，无限幻想， 迎风挥击千层浪，少年不败热血
+                  </span>
+                </p>
+              </a>
+            </li>
+{#            {% endfor %}#}
+            <li>
+                <a href="detail.html">
+                    <div>
+                        <img src="img/book-2.jgp" alt="" width="" /><span></span>
+                    </div>
+                    <p>
+                        <b>无疆</b>
+                        <span class="author">小刀锋利  著 </span>
+                        <span class="book-description">
+                            鹰击长空，鱼跃龙门，万物皆有灵，末法之季，磁极轮转
+                        </span>
+                    </p>
+                </a>
+            </li>
+
+            <li>
+                <a>
+                      <div>
+                          <img src="img/book-3.jpg" alt="" width="" /><span></span>
+                      </div>
+                      <p>
+                          <b>全能修炼至尊</b>
+                          <span class="author">蓝领笑笑生  著</span>
+                          <span class="book-description">
+                              穿越与手机融合，拥有手机所有功能，真N核大脑运行，描述录入江小白，一个
+                              废物拖油瓶，要咸鱼翻生一举成龙，什么天才便宜姐姐， “啊， 姐姐大人，
+                              我错了，不该说的心里话！”
+                          </span>
+                      </p>
+                  </a>
+            </li>
+
+            <li>
+                <a href="detail.html">
+                    <div>
+                        <img src="img/book-3.jpg" alt="" width=""><span></span>
+                    </div>
+                    <p>
+                        <b>大主宰</b>
+                        <span class="author">天蚕土豆  著</span>
+                        <span class="book-description">
+                            大千世界，位面交汇，万族林立，群雄荟萃，一位位来自下位面的天之骄子
+                            无尽火域，炎帝执掌，万火焚苍穹。<br/>
+                            无境之内，武祖之威，威慑乾坤。<br/>
+                            西天之殿，百战之皇，战威无可敌。<br/>
+                        </span>
+                    </p>
+                </a>
+            </li>
+
+
+
+          </ul>
+        </div><!-- /.recommend -->
+
+
+        <!-- Xuanhuan -->
+        <div class="xuanhuan">
+          <div class="xuanhuan-title">
+            <span>玄幻</span>
+            <p class="txt">fantasy</p>
+            <p>novel</p>
+            <span class="more"><a href="javascript: void(0);">更多<span style="float: right;font-size: 12px;letter-spacing: -2px;vertical-align: middle;margin-top: 2px;">&nbsp;&gt;&gt;</span></a></span>
+          </div>
+          <div class="wrap890 xuanhuan-wrap">
+
+            <dl class="book-list">
+{#            {% for xh in xhnovel %}#}
+              <dd class="book">
+                <div class="book-wrap">
+{#                  <a class="cover" href="javascript: void(0);"><img src="{{ xh.novelimg }}" alt="" width="136" height="180" /></a>#}
+                    <a class="cover" href="javascript: void(0);"><img src="{% static 'img/cover01.jpg'%}" alt="" width="136" height="180" /></a>
+                  <div class="book-presentation">
+{#                    <h2><a href="javascript: void(0);">{{ xh.novelname }}</a></h2>#}
+                      <h2><a href="detail.html">The Sacred Ruins神圣废墟</a></h2>
+                    <p class="book-info">
+                      <i></i>
+{#                      <span>{{ xh.sort }}</span>#}
+                        <span>玄幻</span>
+{#                      <span class="info-txt">{{ xh.state }}</span>#}
+                        <span class="info-txt">连载</span>
+                      <span>314.14万字</span>
+                    </p>
+                    <p class="book-author">
+                      <a href="javascript: void(0);">作者:
+{#                        <span>{{ xh.author }}</span>#}
+                          <span>啊啊</span>
+                      </a>
+                    </p>
+                    <p class="desc">
+{#                      {{ xh.description|safe|truncatechars:"120" }}#}
+                        涨落时，随着月亮的消失和生长，当薄雾笼罩着大地时，看哪！一旦熄灭的或在神圣的
+                    </p>
+                  </div>
+                </div>
+              </dd>
+
+              <dd class="book">
+                <div class="book-wrap">
+                  <a class="cover" href="javascript: void(0);"><img src="{% static 'img/supperstart.jpg'%}" alt="" width="136" height="180" /></a>
+                  <div class="book-presentation">
+                    <h2><a href="javascript: void(0);">Otherworldly Evil Monarch</a></h2>
+                    <p class="book-info">
+                      <i></i>
+                      <span>玄幻</span>
+                      <span class="info-txt">连载</span>
+                      <span>314.14万字</span>
+                    </p>
+                    <p class="book-author">
+                      <a href="javascript: void(0);">作者:
+                        <span>剑剑</span>
+                      </a>
+                    </p>
+                    <p class="desc">
+                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件......
+                    </p>
+                  </div>
+                </div>
+              </dd>
+{#            {% endfor %}#}
+
+            </dl>
+
+          </div>
+        </div>
+
+
+
+
+
+<!-- Xuanhuan -->
+        <div class="xuanhuan">
+          <div class="xuanhuan-title">
+            <span>飞天</span>
+            <p class="txt">fantasy</p>
+            <p>novel</p>
+            <span class="more"><a href="javascript: void(0);">更多<span style="float: right;font-size: 12px;letter-spacing: -2px;vertical-align: middle;margin-top: 2px;">&nbsp;&gt;&gt;</span></a></span>
+          </div>
+          <div class="wrap890 xuanhuan-wrap">
+
+            <dl class="book-list">
+
+              <dd class="book">
+                <div class="book-wrap">
+                  <a class="cover" href="javascript: void(0);"><img src="{% static 'img/cover02.png'%}" alt="" width="136" height="180" /></a>
+                  <div class="book-presentation">
+                    <h2><a href="javascript: void(0);">Otherworldly Evil Monarch</a></h2>
+                    <p class="book-info">
+                      <i></i>
+                      <span>玄幻</span>
+                      <span class="info-txt">连载</span>
+                      <span>314.14万字</span>
+                    </p>
+                    <p class="book-author">
+                      <a href="javascript: void(0);">作者:
+                        <span>剑剑</span>
+                      </a>
+                    </p>
+                    <p class="desc">
+                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件......
+                    </p>
+                  </div>
+                </div>
+              </dd>
+
+              <dd class="book">
+                <div class="book-wrap">
+                  <a class="cover" href="javascript: void(0);"><img src="{% static 'img/supperstart.jpg'%}" alt="" width="136" height="180" /></a>
+                  <div class="book-presentation">
+                    <h2><a href="javascript: void(0);">Otherworldly Evil Monarch</a></h2>
+                    <p class="book-info">
+                      <i></i>
+                      <span>玄幻</span>
+                      <span class="info-txt">连载</span>
+                      <span>314.14万字</span>
+                    </p>
+                    <p class="book-author">
+                      <a href="javascript: void(0);">作者:
+                        <span>剑剑</span>
+                      </a>
+                    </p>
+                    <p class="desc">
+                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件......
+                    </p>
+                  </div>
+                </div>
+              </dd>
+
+            </dl>
+
+
+          </div>
+        </div>
+
+
+ <!--Moshou -->
+          <div class="xuanhuan">
+          <div class="xuanhuan-title">
+            <span>飞天</span>
+            <p class="txt">fantasy</p>
+            <p>novel</p>
+            <span class="more"><a href="javascript: void(0);">更多<span style="float: right;font-size: 12px;letter-spacing: -2px;vertical-align: middle;margin-top: 2px;">&nbsp;&gt;&gt;</span></a></span>
+          </div>
+          <div class="wrap890 xuanhuan-wrap">
+
+            <dl class="book-list">
+
+              <dd class="book">
+                <div class="book-wrap">
+                  <a class="cover" href="javascript: void(0);"><img src="{% static 'img/暂无封面.bmp'%}" alt="" width="136" height="180" /></a>
+                  <div class="book-presentation">
+                    <h2><a href="javascript: void(0);">Otherworldly Evil Monarch</a></h2>
+                    <p class="book-info">
+                      <i></i>
+                      <span>玄幻</span>
+                      <span class="info-txt">连载</span>
+                      <span>314.14万字</span>
+                    </p>
+                    <p class="book-author">
+                      <a href="javascript: void(0);">作者:
+                        <span>剑剑</span>
+                      </a>
+                    </p>
+                    <p class="desc">
+                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件......
+                    </p>
+                  </div>
+                </div>
+              </dd>
+
+              <dd class="book">
+                <div class="book-wrap">
+                  <a class="cover" href="javascript: void(0);"><img src="{% static 'img/supperstart.jpg'%}" alt="" width="136" height="180" /></a>
+                  <div class="book-presentation">
+                    <h2><a href="javascript: void(0);">Otherworldly Evil Monarch</a></h2>
+                    <p class="book-info">
+                      <i></i>
+                      <span>玄幻</span>
+                      <span class="info-txt">连载</span>
+                      <span>314.14万字</span>
+                    </p>
+                    <p class="book-author">
+                      <a href="javascript: void(0);">作者:
+                        <span>剑剑</span>
+                      </a>
+                    </p>
+                    <p class="desc">
+                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件......
+                    </p>
+                  </div>
+                </div>
+              </dd>
+
+            </dl>
+
+
+          </div>
+        </div>
+
+
+ <!-- Dagoubang -->
+          <div class="xuanhuan">
+          <div class="xuanhuan-title">
+            <span>飞天</span>
+            <p class="txt">fantasy</p>
+            <p>novel</p>
+            <span class="more"><a href="javascript: void(0);">更多<span style="float: right;font-size: 12px;letter-spacing: -2px;vertical-align: middle;margin-top: 2px;">&nbsp;&gt;&gt;</span></a></span>
+          </div>
+          <div class="wrap890 xuanhuan-wrap">
+
+            <dl class="book-list">
+
+              <dd class="book">
+                <div class="book-wrap">
+                  <a class="cover" href="javascript: void(0);"><img src="{% static 'img/supperstart.jpg'%}" alt="" width="136" height="180" /></a>
+                  <div class="book-presentation">
+                    <h2><a href="javascript: void(0);">Otherworldly Evil Monarch</a></h2>
+                    <p class="book-info">
+                      <i></i>
+                      <span>玄幻</span>
+                      <span class="info-txt">连载</span>
+                      <span>314.14万字</span>
+                    </p>
+                    <p class="book-author">
+                      <a href="javascript: void(0);">作者:
+                        <span>剑剑</span>
+                      </a>
+                    </p>
+                    <p class="desc">
+                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件......
+                    </p>
+                  </div>
+                </div>
+              </dd>
+
+              <dd class="book">
+                <div class="book-wrap">
+                  <a class="cover" href="javascript: void(0);"><img src="{% static 'img/supperstart.jpg'%}" alt="" width="136" height="180" /></a>
+                  <div class="book-presentation">
+                    <h2><a href="javascript: void(0);">Otherworldly Evil Monarch</a></h2>
+                    <p class="book-info">
+                      <i></i>
+                      <span>玄幻</span>
+                      <span class="info-txt">连载</span>
+                      <span>314.14万字</span>
+                    </p>
+                    <p class="book-author">
+                      <a href="javascript: void(0);">作者:
+                        <span>剑剑</span>
+                      </a>
+                    </p>
+                    <p class="desc">
+                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件......
+                    </p>
+                  </div>
+                </div>
+              </dd>
+
+            </dl>
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--===== Main End =====-->
+
+
+
+<!--===== Begin Footer =====-->
+<footer class="footer">
+  <div class="wrap1000 footer-wrap">
+    <div class="logo-footer">
+      <a href="javascript: void(0);">
+        <img src="{% static 'img/footer_logo.png'%}" alt="" width="55" height="50" />
+        <span class="footer-txt">潭州教育Python学院</span>
+      </a>
+      <span class="footer-font">
+        TAN ZHOU EDU PYTHON COLLEGE
+      </span>
+    </div>
+    <div class="copy-right">
+      <p>
+        本站小说均来源于互联网,仅供技术学习和交流使用,请尊重原创作者切勿用商业用途,请于下载后的24小时内删除。
+      </p>
+      <p class="">
+        Copyright © 2017 All Rights Reserved 湖南潭州教育网络科技有限公司PYTHON学院
+      </p>
+    </div>
+  </div>
+</footer>
+<!--===== Footer End =====-->
+
+
+
+<!-- Main Plugin -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="{% static 'js/index.js'%}"></script>
+
+</body>
+</html>
